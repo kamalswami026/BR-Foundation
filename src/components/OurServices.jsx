@@ -9,63 +9,59 @@ import HandShake from "../assets/handshake.svg";
 import Share from "../assets/share.svg";
 
 const Card = styled(Box)({
-  height: "400px",
+  height: "300px",
   padding: "1rem",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  width: "330px",
-  gap: 15,
+  width: "350px",
+  boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+  gap: 10,
 });
 
 const OurServices = () => {
   return (
-    <Box width="100%">
-      <Grid container justifyContent="center" width="100%">
-        <Grid item sm={4}>
-          <Card>
-            <img src={GiveDonationIcon} width="80px" />
-            <Typography>GIVE DONATION</Typography>
-            <Typography textAlign="center">
-              Give donations for the events which are conducting for the people
-              in need
-            </Typography>
-            <Stack direction="row" spacing={2}>
-              <Typography>GIVE DONATION</Typography>
-              <img src={RightArrow} width="25px" />
-            </Stack>
-          </Card>
-        </Grid>
-        <Grid item sm={4}>
-          <Card>
-            <img src={HandShake} width="80px" />
-            <Typography>GIVE DONATION</Typography>
-            <Typography textAlign="center">
-              Give donations for the events which are conducting for the people
-              in need
-            </Typography>
-            <Stack direction="row" spacing={2}>
-              <Typography>GIVE DONATION</Typography>
-              <img src={RightArrow} width="25px" />
-            </Stack>
-          </Card>
-        </Grid>
-        <Grid item sm={4}>
-          <Card>
-            <img src={Share} width="80px" />
-            <Typography>GIVE DONATION</Typography>
-            <Typography textAlign="center">
-              Give donations for the events which are conducting for the people
-              in need
-            </Typography>
-            <Stack direction="row" spacing={2}>
-              <Typography>GIVE DONATION</Typography>
-              <img src={RightArrow} width="25px" />
-            </Stack>
-          </Card>
-        </Grid>
-      </Grid>
+    <Box
+      width="100%"
+      sx={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}
+    >
+      <Card>
+        <img src={GiveDonationIcon} width="80px" />
+        <Typography>GIVE DONATION</Typography>
+        <Typography textAlign="center">
+          Give donations for the events which are conducting for the people in
+          need
+        </Typography>
+        <Stack direction="row" spacing={2}>
+          <Typography>GIVE DONATION</Typography>
+          <img src={RightArrow} width="25px" />
+        </Stack>
+      </Card>
+      <Card>
+        <img src={HandShake} width="80px" />
+        <Typography>GIVE DONATION</Typography>
+        <Typography textAlign="center">
+          Give donations for the events which are conducting for the people in
+          need
+        </Typography>
+        <Stack direction="row" spacing={2}>
+          <Typography>GIVE DONATION</Typography>
+          <img src={RightArrow} width="25px" />
+        </Stack>
+      </Card>
+      <Card>
+        <img src={Share} width="80px" />
+        <Typography>GIVE DONATION</Typography>
+        <Typography textAlign="center">
+          Give donations for the events which are conducting for the people in
+          need
+        </Typography>
+        <Stack direction="row" spacing={2}>
+          <Typography>GIVE DONATION</Typography>
+          <img src={RightArrow} width="25px" />
+        </Stack>
+      </Card>
     </Box>
   );
 };

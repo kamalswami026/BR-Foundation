@@ -15,15 +15,16 @@ const Humanity = () => {
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",
-              gap: 4,
+              gap: 8,
               height: "600px",
               padding: 10,
+              background: "#F7F7F7",
             }}
           >
-            <Typography variant="h4" textAlign="center">
+            <Typography variant="h4" textAlign="center" fontWeight="bold">
               WE ALWAYS <br /> SERVE THE HUMANITY
             </Typography>
-            <Typography textAlign="center">
+            <Typography textAlign="center" fontSize={20}>
               Our organization is dedicated to improving the lives of people in
               need. Through our various programs and initiatives, we strive to
               provide essential resources and support to those who are
@@ -34,9 +35,13 @@ const Humanity = () => {
               and serve humanity.
             </Typography>
 
-            <Stack direction="row">
-              <Button>CONTACT US</Button>
-              <Button>DONATE NOW</Button>
+            <Stack direction="row" spacing={5}>
+              <Button variant="outlined" size="large">
+                CONTACT US
+              </Button>
+              <Button variant="contained" size="large">
+                DONATE NOW
+              </Button>
             </Stack>
           </Box>
         </Grid>

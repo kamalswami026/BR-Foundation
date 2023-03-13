@@ -15,14 +15,14 @@ const Home = () => {
         flexDirection: "column",
       }}
     >
-      <Typography variant="h3" sx={{ textAlign: "center", color: "white" }}>
+      <Typography variant="h3" sx={{ textAlign: "center", color: "white", letterSpacing: 5}} gutterBottom>
         CHANGE THE LIFE OF THOSE,
         <br /> WHO HAVE <span style={{ color: "#FED70D" }}>NO HOPE</span>
       </Typography>
       <Typography sx={{ color: "white" }}>
         Be the reason someone smiles today
       </Typography>
-      <Button variant="contained" size="large">
+      <Button variant="contained" size="large" sx={{mt: 8}}>
         DONATE NOW
       </Button>
     </Box>
