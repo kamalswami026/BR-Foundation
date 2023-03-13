@@ -12,16 +12,18 @@ const Footer = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        padding: 10,
+        py: 12,
         background: "#111",
       }}
     >
       <Stack direction="row" spacing={2} alignItems="center" mb={5}>
         <img src={Logo} width="50px" />
-        <Typography color="white">BR FOUNDATION</Typography>
+        <Typography color="white" variant="h6">
+          BR FOUNDATION
+        </Typography>
       </Stack>
 
-      <Typography textAlign="center" color="white">
+      <Typography textAlign="center" color="white" letterSpacing={5}>
         It’s not how much we give,
         <br /> but how much love we put <br />
         into giving.
