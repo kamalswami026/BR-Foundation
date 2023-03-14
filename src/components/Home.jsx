@@ -2,8 +2,11 @@ import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import BackgroundImage from "../assets/home_background.jpg";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Home = () => {
+  const isLargeScreen = useMediaQuery("(min-width:600px)");
+
   return (
     <Box
       id="HOME"
@@ -21,7 +24,7 @@ const Home = () => {
       }}
     >
       <Typography
-        variant="h3"
+        variant={isLargeScreen ? "h3" : "h5"}
         sx={{ textAlign: "center", color: "white", letterSpacing: 5 }}
         gutterBottom
       >

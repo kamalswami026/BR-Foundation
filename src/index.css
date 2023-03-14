@@ -9,3 +9,7 @@ a {
   font: inherit;
   vertical-align: baseline;
 }
+
+html {
+  scroll-behavior: smooth;
+}

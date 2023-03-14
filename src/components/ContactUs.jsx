@@ -7,8 +7,11 @@ import MessageIcon from "@mui/icons-material/Message";
 import CallIcon from "@mui/icons-material/Call";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const ContactUs = () => {
+  const isLargeScreen = useMediaQuery("(min-width:600px)");
+
   return (
     <Box
       id="CONTACT US"
@@ -17,9 +20,10 @@ const ContactUs = () => {
         justifyContent: "center",
         width: "100%",
         position: "relative",
+        flexDirection: isLargeScreen ? "row" : "column",
       }}
     >
-      <Box sx={{ flexGrow: 1, p: 5, width: "100%" }}>
+      <Box sx={{ flexGrow: 1, p: isLargeScreen ? 5 : 1, width: "100%" }}>
         <Stack gap={2}>
           <Typography fontWeight="bold" fontSize={20}>
             Email Us
@@ -38,13 +42,14 @@ const ContactUs = () => {
               type="text"
               width="100%"
               height="100%"
+              placeholder="Your Name"
               style={{
                 background: "#fff8d8",
                 border: "none",
                 outlineWidth: 0,
                 padding: "15px 15px",
                 borderRadius: 5,
-                fontSize: 20,
+                fontSize: isLargeScreen ? 20 : 15,
               }}
             />
           </Box>
@@ -62,13 +67,14 @@ const ContactUs = () => {
               type="text"
               width="100%"
               height="100%"
+              placeholder="Your Email"
               style={{
                 background: "#fff8d8",
                 border: "none",
                 outlineWidth: 0,
                 padding: "15px 15px",
                 borderRadius: 5,
-                fontSize: 20,
+                fontSize: isLargeScreen ? 20 : 15,
               }}
             />
           </Box>
@@ -86,13 +92,14 @@ const ContactUs = () => {
               rows={3}
               width="100%"
               height="100%"
+              placeholder="Message"
               style={{
                 background: "#fff8d8",
                 border: "none",
                 outlineWidth: 0,
                 padding: "15px 15px",
                 borderRadius: 5,
-                fontSize: 20,
+                fontSize: isLargeScreen ? 20 : 15,
               }}
             />
           </Box>
@@ -107,59 +114,86 @@ const ContactUs = () => {
             f
           </Typography>
           <Stack
-            direction="row"
+            direction={isLargeScreen ? "row" : "column"}
             gap={2}
             sx={{
               p: "15px",
               boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
             }}
+            alignItems={isLargeScreen ? "none" : "center"}
           >
-            <CallIcon />
-            <Typography fontWeight="bold" width="200px">
-              Mobile Number
-            </Typography>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+              <CallIcon />
+              <Typography
+                fontWeight="bold"
+                width={isLargeScreen ? "200px" : "100%"}
+              >
+                Mobile Number
+              </Typography>
+            </Box>
             <Typography>+91 9897875407</Typography>
           </Stack>
+
           <Stack
-            direction="row"
+            direction={isLargeScreen ? "row" : "column"}
             gap={2}
             sx={{
               p: "15px",
               boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
             }}
+            alignItems={isLargeScreen ? "none" : "center"}
           >
-            <EmailIcon />
-            <Typography fontWeight="bold" width="200px">
-              Email Id
-            </Typography>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+              <EmailIcon />
+              <Typography
+                fontWeight="bold"
+                width={isLargeScreen ? "200px" : "100%"}
+              >
+                Email Id
+              </Typography>
+            </Box>
             <Typography>brfoundation45@gmail.com</Typography>
           </Stack>
+
           <Stack
-            direction="row"
+            direction={isLargeScreen ? "row" : "column"}
             gap={2}
             sx={{
               p: "15px",
               boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
             }}
+            alignItems={isLargeScreen ? "none" : "center"}
           >
-            <InstagramIcon />
-            <Typography fontWeight="bold" width="200px">
-              Instagram
-            </Typography>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+              <InstagramIcon />
+              <Typography
+                fontWeight="bold"
+                width={isLargeScreen ? "200px" : "100%"}
+              >
+                Instagram
+              </Typography>
+            </Box>
             <Typography>brfoundation_</Typography>
           </Stack>
+
           <Stack
-            direction="row"
+            direction={isLargeScreen ? "row" : "column"}
             gap={2}
             sx={{
               p: "15px",
               boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
             }}
+            alignItems={isLargeScreen ? "none" : "center"}
           >
-            <YouTubeIcon />
-            <Typography fontWeight="bold" width="200px">
-              YouTube
-            </Typography>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+              <InstagramIcon />
+              <Typography
+                fontWeight="bold"
+                width={isLargeScreen ? "200px" : "100%"}
+              >
+                YouTube
+              </Typography>
+            </Box>
             <Typography>BR Foundation</Typography>
           </Stack>
         </Stack>
@@ -172,6 +206,7 @@ const ContactUs = () => {
           left: "50%",
           backgroundColor: "#111",
           opacity: 0.1,
+          display: isLargeScreen ? "block" : "none",
         }}
       />
     </Box>

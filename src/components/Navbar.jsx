@@ -2,8 +2,13 @@ import { Button, Divider, Typography } from "@mui/material";
 import { Box, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 const Navbar = () => {
   const menu = ["HOME", "ABOUT", "IMAGES", "VIDEOS", "CONTACT US"];
+
+  const isLargeScreen = useMediaQuery("(min-width:600px)");
+
 
   function useScroll() {
     const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -59,19 +64,29 @@ const Navbar = () => {
           justifyContent: "space-between",
           alignItems: "center",
           py: 2,
-          px: 12,
+          px: isLargeScreen ? 12 : 2,
           background: "transparent",
           width: "100%",
         }}
       >
         <Stack direction="row" alignItems="center" gap={2}>
-          <img src={Logo} width="50px" />
-          <Typography color="white" fontWeight="bold">
+          <img src={Logo} width={isLargeScreen ? "50px" : "35px"} />
+          <Typography
+            color="white"
+            fontWeight="bold"
+            fontSize={isLargeScreen ? 10 : 15}
+          >
             BR FOUNDATION
           </Typography>
         </Stack>
 
-        <Box sx={{ display: "flex", alignItems: "center", gap: 6 }}>
+        <Box
+          sx={{
+            display: isLargeScreen ? "flex" : "none",
+            alignItems: "center",
+            gap: 6,
+          }}
+        >
           <Stack direction="row" alignItems="center" gap={3}>
             {menu.map((item) => (
               <a href={`#${item}`}>

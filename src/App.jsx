@@ -13,6 +13,7 @@ import { getDocs, collection } from "firebase/firestore";
 import db from "./utils/firebase";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Members from "./components/Members";
 
 const collection_name = "Images";
 
@@ -72,6 +73,9 @@ function App() {
       </HeadingContainer>
       <HeadingContainer heading="DONATE US">
         <DonateUs />
+      </HeadingContainer>
+      <HeadingContainer heading="MEMBERS">
+        <Members />
       </HeadingContainer>
       <Footer />
       <CssBaseline />

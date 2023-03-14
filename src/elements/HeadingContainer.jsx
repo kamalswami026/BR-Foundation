@@ -1,8 +1,11 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const HeadingContainer = ({ heading, children }) => {
+  const isLargeScreen = useMediaQuery("(min-width:600px)");
+
   return (
     <Box
       sx={{
@@ -10,7 +13,7 @@ const HeadingContainer = ({ heading, children }) => {
         alignItems: "center",
         width: "100%",
         flexDirection: "column",
-        p: 5,
+        p: isLargeScreen ? 5 : 2,
       }}
     >
       <Typography
