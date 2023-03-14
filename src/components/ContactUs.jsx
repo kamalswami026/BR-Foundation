@@ -11,6 +11,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 const ContactUs = () => {
   return (
     <Box
+      id="CONTACT US"
       sx={{
         display: "flex",
         justifyContent: "center",
@@ -74,15 +75,15 @@ const ContactUs = () => {
           <Box
             sx={{
               display: "flex",
-              alignItems: "center",
+
               width: "100%",
               background: "#fff8d8",
-              px: 2,
+              p: 2,
             }}
           >
             <MessageIcon sx={{ color: "#8F8C79" }} />
-            <input
-              type="text"
+            <textarea
+              rows={3}
               width="100%"
               height="100%"
               style={{
@@ -101,7 +102,7 @@ const ContactUs = () => {
         </Stack>
       </Box>
       <Box sx={{ flexGrow: 1, py: 5, width: "100%" }}>
-        <Stack gap={2}>
+        <Stack gap={4}>
           <Typography fontWeight="bold" fontSize={20} sx={{ opacity: "0" }}>
             f
           </Typography>
@@ -163,7 +164,16 @@ const ContactUs = () => {
           </Stack>
         </Stack>
       </Box>
-      <Box sx={{width: "2px", height: "100%", position: "absolute", left: "50%", backgroundColor: "#111", opacity: 0.1}} />
+      <Box
+        sx={{
+          width: "2px",
+          height: "100%",
+          position: "absolute",
+          left: "50%",
+          backgroundColor: "#111",
+          opacity: 0.1,
+        }}
+      />
     </Box>
   );
 };

@@ -1,0 +1,11 @@
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  vertical-align: baseline;
+}

@@ -6,6 +6,7 @@ const PhotoGallery = ({ images }) => {
   const [counter, setCounter] = useState(6);
   return (
     <Box
+      id="IMAGES"
       sx={{
         display: "flex",
         flexDirection: "column",

@@ -12,12 +12,14 @@ import HeadingContainer from "./elements/HeadingContainer";
 import { getDocs, collection } from "firebase/firestore";
 import db from "./utils/firebase";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const collection_name = "Images";
 
 function App() {
   const [images, setImages] = useState([]);
-  console.log("🚀 ~ file: App.jsx:20 ~ App ~ images:", images);
+  const [videos, setVideos] = useState([]);
+  console.log("🚀 ~ file: App.jsx:22 ~ App ~ videos:", videos);
 
   const findAll = async () => {
     const doc_refs = await getDocs(collection(db, collection_name));
@@ -31,8 +33,24 @@ function App() {
     setImages(images);
   };
 
+  const fetchVideos = () => {
+    axios
+      .get(
+        "https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails%2Csnippet&playlistId=PLSwr27OAr5e_a-Iqv4d53wYz6pEjjETvy&key=AIzaSyDLl5oi9n6Ie59Okz9Oz_t4MYM8CYHiGd4&maxResults=50"
+      )
+      .then((data) => {
+        console.log("🚀 ~ file: App.jsx:42 ~ .then ~ data:", data);
+        let items = [];
+        data.data.items.map((item) =>
+          items.push(item.snippet.resourceId.videoId)
+        );
+        setVideos(items);
+      });
+  };
+
   useEffect(() => {
     findAll();
+    fetchVideos();
   }, []);
 
   return (
@@ -47,7 +65,7 @@ function App() {
         <PhotoGallery images={images} />
       </HeadingContainer>
       <HeadingContainer heading="VIDEO GALLERY">
-        <VideoGallery />
+        <VideoGallery videos={videos} />
       </HeadingContainer>
       <HeadingContainer heading="CONTACT US">
         <ContactUs />

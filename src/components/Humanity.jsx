@@ -36,10 +36,27 @@ const Humanity = () => {
             </Typography>
 
             <Stack direction="row" spacing={5}>
-              <Button variant="outlined" size="large">
+              <Button
+                variant="outlined"
+                size="large"
+                sx={{
+                  borderColor: "#FED60F",
+                  color: "#FED60F",
+                  fontWeight: "bold",
+                }}
+              >
                 CONTACT US
               </Button>
-              <Button variant="contained" size="large">
+              <Button
+                variant="contained"
+                sx={{
+                  background: "#FED60F",
+                  fontWeight: "bold",
+                  color: "black",
+                }}
+                size="large"
+                disableElevation
+              >
                 DONATE NOW
               </Button>
             </Stack>

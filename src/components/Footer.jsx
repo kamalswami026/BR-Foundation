@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import Logo from "../assets/logo.png";
+import FooterImage from "../assets/footer_image.png";
 
 const Footer = () => {
   return (
@@ -13,7 +14,7 @@ const Footer = () => {
         alignItems: "center",
         flexDirection: "column",
         py: 12,
-        background: "#111",
+        background: `url(${FooterImage})`,
       }}
     >
       <Stack direction="row" spacing={2} alignItems="center" mb={5}>

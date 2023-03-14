@@ -23,6 +23,7 @@ const Card = styled(Box)({
 const OurServices = () => {
   return (
     <Box
+      id="ABOUT"
       width="100%"
       sx={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}
     >

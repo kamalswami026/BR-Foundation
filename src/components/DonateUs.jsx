@@ -5,12 +5,13 @@ import React from "react";
 const DonateUs = () => {
   return (
     <Box
+      id="DONATEUS"
       sx={{
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        py: 20
+        py: 20,
       }}
     >
       <Typography variant="h4" fontWeight="bold" gutterBottom>
